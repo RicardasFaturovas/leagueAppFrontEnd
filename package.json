@@ -1,0 +1,22 @@
+{
+  "name": "leagueappfrontend",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/RicardasFaturovas/leagueAppFrontEnd.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/RicardasFaturovas/leagueAppFrontEnd/issues"
+  },
+  "homepage": "https://github.com/RicardasFaturovas/leagueAppFrontEnd#readme",
+  "dependencies": {
+    "ui-router": "^1.0.0-alpha.3"
+  }
+}
