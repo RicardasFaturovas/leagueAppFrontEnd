@@ -17,6 +17,10 @@
   },
   "homepage": "https://github.com/RicardasFaturovas/leagueAppFrontEnd#readme",
   "dependencies": {
+    "material-ui": "^0.15.4",
+    "react": "^15.3.0",
+    "react-dom": "^15.3.0",
+    "react-tap-event-plugin": "^1.0.0",
     "ui-router": "^1.0.0-alpha.3"
   }
 }
