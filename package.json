@@ -4,7 +4,8 @@
   "description": "",
   "main": "app.js",
   "scripts": {
-    "start": "http-server -a localhost -p 8000 -c-1 ./app",
+    "prestart":"npm install",
+    "start": "http-server -a localhost -p 8080 -c-1 ./",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -18,10 +19,12 @@
   },
   "homepage": "https://github.com/RicardasFaturovas/leagueAppFrontEnd#readme",
   "dependencies": {
+    "league-server": "git+https://github.com/RicardasFaturovas/leagueAppFrontEnd",
     "material-ui": "^0.15.4",
     "react": "^15.3.0",
     "react-dom": "^15.3.0",
     "react-tap-event-plugin": "^1.0.0",
     "ui-router": "^1.0.0-alpha.3"
+
   }
 }
