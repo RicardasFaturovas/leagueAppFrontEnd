@@ -20,7 +20,7 @@
   },
   "homepage": "https://github.com/RicardasFaturovas/leagueAppFrontEnd#readme",
   "dependencies": {
-    "league-server": "git+https://github.com/RicardasFaturovas/leagueAppFrontEnd",
+    "league-server": "git+https://github.com/Jurcix/leagueApp",
     "angular-ui-router": "^0.3.1",
     "material-ui": "^0.15.4",
     "react": "^15.3.0",

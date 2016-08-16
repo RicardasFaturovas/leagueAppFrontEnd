@@ -3,17 +3,14 @@
 
 <head>
     <title>League of Legends application</title>
+    <link rel="stylesheet" href="app.css">
 </head>
 
 <body>
-<ul class="menu">
-    <li><a ui-sref="home">Home</a></li>
-    <li><a ui-sref="build-create">Create Build</a></li>
-    <li><a ui-sref="build-search">Search Build</a></li>
-    <li><a ui-sref="profile-edit">Edit Profile</a></li>
-    <li><a ui-sref="profile-view">View Profile</a></li>
-    <li><a ui-sref="profile-search">Search Profile</a></li>
-</ul>
+
+<img src="http://i.imgur.com/nDB7vt1.png" style="width:100%; height:200px">
+
+<nav-bar></nav-bar>
 
 <div ui-view></div>
 <!------------------------------------------- Vendor files --------------------------------------------------------->
@@ -53,6 +50,7 @@
 <script src="components/directives/items.search.drv.js"></script>
 <script src="components/directives/user.build.drv.js"></script>
 <script src="components/directives/user.settings.drv.js"></script>
+<script src="components/directives/navigation.bar.drv.js"></script>
 
 <!----------------------------------------------- Services --------------------------------------------------------->
 
