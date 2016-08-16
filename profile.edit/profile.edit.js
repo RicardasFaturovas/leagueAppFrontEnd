@@ -1,3 +1,5 @@
-/**
- * Created by Jurcix on 2016-08-11.
- */
+'use strict';
+
+angular.module('leagueApp.profileEdit', ['ui.router']).controller('profileEdit', [function(){
+
+}]);

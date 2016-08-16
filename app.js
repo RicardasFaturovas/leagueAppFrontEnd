@@ -1,42 +1,53 @@
 'use strict';
 
-angular.module('leagueApp',["ui.router"])
+angular.module('leagueApp',[
+    'ui.router',
+    'leagueApp.home',
+    'leagueApp.buildCreate',
+    'leagueApp.buildSearch',
+    'leagueApp.profileEdit',
+    'leagueApp.profileSearch',
+    'leagueApp.profileView',
+    'leagueApp.signup',
+    'ngMaterial',
+    'ngMessages'
+    ])
 .config(['$urlRouterProvider', '$stateProvider',function($urlRouterProvider, $stateProvider){
     $stateProvider
         .state('home',{
             url: 'home',
             templateUrl: 'home/home.html',
-            controller:'home/home.js'
+            controller:'home'
         })
         .state('build-create',{
             url: 'buildcreation',
             templateUrl: 'build.create/build.create.html',
-            controller:'build.create/build.create.js'
+            controller:'buildCreate'
         })
         .state('build-search',{
             url: '/buildsearch',
             templateUrl: 'build.search/build.search.html',
-            controller:'build.search/build.search.js'
+            controller:'buildSearch'
         })
         .state('profile-edit',{
             url: '/profiledit',
             templateUrl: 'profile.edit/profile.edit.html',
-            controller:'profile.edit/profile.edit.js'
+            controller:'profileEdit'
         })
         .state('profile-search',{
             url: '/profilesearch',
             templateUrl: 'profile.search/profile.search.html',
-            controller:'profile.search/profile.search.js'
+            controller:'profileSearch'
         })
         .state('profile-view',{
             url: 'profileview',
             templateUrl: 'profile.view/profile.view.html',
-            controller:'profile.view/profile.view.js'
+            controller:'profileView'
         })
         .state('signup',{
             url: 'signup',
             templateUrl: 'signup/signup.html',
-            controller:'signup/signup.js'
+            controller:'signup'
         })
 
 }]);

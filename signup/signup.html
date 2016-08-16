@@ -1,10 +1,39 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
+<div layout="column" ng-app="leagueApp" style="border: 1px solid black">
+    <form name="signupForm">
 
-</body>
-</html>
+        <div style="width: 200px">
+            <md-input-container class="md-block" flex-gt-sm>
+                <label>Username</label>
+                <input required="" name="username" ng-model="user.username">
+                <div ng-messages="signupForm.username.$error">
+                    <div ng-message="required">This is required</div>
+                </div>
+            </md-input-container>
+
+            <md-input-container class="md-block" flex-gt-sm>
+                <label>Password</label>
+                <input required="" type="password" name="password" ng-model="user.password">
+                <div ng-messages="signupForm.password.$error">
+                    <div ng-message="required">This is required</div>
+                </div>
+            </md-input-container>
+
+            <md-input-container class="md-block" flex-gt-sm>
+                <label>Repeat password</label>
+                <input required="" type="password" name="repeatPassword" ng-model="user.repeatPassword">
+                <div ng-messages="signupForm.repeatPassword.$error">
+                    <div ng-message="required">This is required</div>
+                </div>
+            </md-input-container>
+
+            <md-input-container class="md-block" flex-gt-sm>
+                <label>Email</label>
+                <input required="" type="email" name="email" ng-model="user.email">
+                <div ng-messages="signupForm.email.$error">
+                    <div ng-message="required">This is required</div>
+                </div>
+            </md-input-container>
+        </div>
+        <md-button class="md-raised" ng-click="()">Submit</md-button>
+    </form>
+</div>
