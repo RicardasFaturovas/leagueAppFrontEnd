@@ -4,6 +4,7 @@
   "description": "",
   "main": "app.js",
   "scripts": {
+
     "prestart":"npm install",
     "start": "http-server -a localhost -p 8080 -c-1 ./",
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -20,6 +21,7 @@
   "homepage": "https://github.com/RicardasFaturovas/leagueAppFrontEnd#readme",
   "dependencies": {
     "league-server": "git+https://github.com/RicardasFaturovas/leagueAppFrontEnd",
+    "angular-ui-router": "^0.3.1",
     "material-ui": "^0.15.4",
     "react": "^15.3.0",
     "react-dom": "^15.3.0",

@@ -1,4 +1,5 @@
 'use strict';
+
 angular.module('leagueApp',["ui.router"])
 .config(['$urlRouterProvider', '$stateProvider',function($urlRouterProvider, $stateProvider){
     $stateProvider
