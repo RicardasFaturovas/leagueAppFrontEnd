@@ -3,6 +3,9 @@
 
 <head>
     <title>League of Legends application</title>
+    <link rel="stylesheet" href="http://ajax.googleapis.com/ajax/libs/angular_material/1.1.0-rc2/angular-material.min.css">
+    <link href="bower_components/angular-material/angular-material.css" rel="stylesheet">
+    <link href="bower_components/angular-material/angular-material.min.css" rel="stylesheet">
 </head>
 
 <body>
@@ -19,6 +22,10 @@
 <!------------------------------------------- Vendor files --------------------------------------------------------->
 <script src="bower_components/angular/angular.js"></script>
 <script src="node_modules/angular-ui-router/release/angular-ui-router.js"></script>
+<script src="bower_components/angular-animate/angular-animate.min.js"></script>
+<script src="bower_components/angular-aria/angular-aria.min.js"></script>
+<script src="bower_components/angular-material/angular-material.min.js"></script>
+<script src="bower_components/angular-messages/angular-messages.min.js"></script>
 
 <!-------------------------------------------- Application --------------------------------------------------------->
 <script src="app.js"></script>
@@ -55,10 +62,12 @@
 <script src="components/directives/user.settings.drv.js"></script>
 
 <!----------------------------------------------- Services --------------------------------------------------------->
-
+<script src="components/services/items.get.service.js"></script>
 <!------------------------------------------------ Filters --------------------------------------------------------->
 <script src="components/filters/build.search.filter.js"></script>
 <script src="components/filters/item.search.filter.js"></script>
+
+
 
 </body>
 </html>

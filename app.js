@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('leagueApp',["ui.router"])
+angular.module('leagueApp',['leagueApp.buildCreate','ngMaterial','ui.router'])
 .config(['$urlRouterProvider', '$stateProvider',function($urlRouterProvider, $stateProvider){
     $stateProvider
         .state('home',{
@@ -11,7 +11,8 @@ angular.module('leagueApp',["ui.router"])
         .state('build-create',{
             url: 'buildcreation',
             templateUrl: 'build.create/build.create.html',
-            controller:'build.create/build.create.js'
+            controller:'buildCreate'
+
         })
         .state('build-search',{
             url: '/buildsearch',
