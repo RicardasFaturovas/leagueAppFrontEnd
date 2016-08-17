@@ -11,7 +11,12 @@ angular.module('leagueApp',['leagueApp.buildCreate','ngMaterial','ui.router'])
         .state('build-create',{
             url: 'buildcreation',
             templateUrl: 'build.create/build.create.html',
-            controller:'buildCreate'
+            controller:'buildCreate',
+            resolve: {
+                items : function(itemGetService){
+                    return itemGetService.getItems();
+                }
+            }
 
         })
         .state('build-search',{

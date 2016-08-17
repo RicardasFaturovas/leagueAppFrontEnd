@@ -1,6 +1,5 @@
 'use strict';
-angular.module('leagueApp.buildCreate',[]).controller('buildCreate', ['$scope', 'itemGetService',function ($scope, itemGetService) {
-    console.log(itemGetService.ItemsSrv);
-    $scope.abc = itemGetService.ItemsSrv;
+angular.module('leagueApp.buildCreate',[]).controller('buildCreate', ['$scope', 'items',function ($scope, items) {
+    $scope.abc = items;
     console.log($scope.abc);
 }]);
