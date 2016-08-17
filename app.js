@@ -40,4 +40,4 @@ angular.module('leagueApp',['leagueApp.buildCreate','ngMaterial','ui.router'])
             controller:'signup/signup.js'
         })
 
-}]);
+}]).constant('API_KEY','RGAPI-EAF47474-4678-405C-A6E0-0EB899731794');

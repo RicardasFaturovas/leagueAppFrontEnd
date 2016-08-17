@@ -1,7 +1,7 @@
 'use strict';
 
 
-angular.module('leagueApp').factory('itemGetService', function ($http){
+angular.module('leagueApp').factory('itemGetService', ['$http','API_KEY',function ($http,API_KEY){
     //Initial variables and Item constructor
     var ItemListSrv = null;
     var ItemsSrv =[];
@@ -14,7 +14,7 @@ angular.module('leagueApp').factory('itemGetService', function ($http){
     //gets item data from riot api
     $http({
         method: 'GET',
-        url: 'https://global.api.pvp.net/api/lol/static-data/euw/v1.2/item?itemListData=all&api_key=RGAPI-EAF47474-4678-405C-A6E0-0EB899731794'
+        url: 'https://global.api.pvp.net/api/lol/static-data/euw/v1.2/item?itemListData=all&api_key=' + API_KEY
     }).then(function successCallback(response) {
       ItemListSrv = response.data.data;
         console.log(ItemListSrv);
@@ -34,4 +34,4 @@ angular.module('leagueApp').factory('itemGetService', function ($http){
     return {
         ItemsSrv: ItemsSrv
     }
-});
+}]);
