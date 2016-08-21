@@ -11,7 +11,7 @@
         <md-dialog-content>
             <div class="md-dialog-content">
                 <ul>
-                    <li ng-repeat="item in items"><img src="{{item.image}}"></li>
+                    <li ng-repeat="item in items"><img src="{{item.image}}" ng-click="selectItem(item)"></li>
                 </ul>
             </div>
         </md-dialog-content>

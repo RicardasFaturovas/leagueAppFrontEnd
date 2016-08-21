@@ -2,8 +2,6 @@
 
 
 angular.module('leagueApp').factory('itemGetService', ['$http', '$q', 'API_KEY', function ($http,$q, API_KEY) {
-    //Initial variables and Item constructor
-
 
     return {
         getItems: function () {
@@ -11,7 +9,8 @@ angular.module('leagueApp').factory('itemGetService', ['$http', '$q', 'API_KEY',
             var ItemsSrv = [];
             var deferred = $q.defer();
 
-            function Item(stats, gold, image) {
+            function Item(name, stats, gold, image) {
+                this.name = name;
                 this.stats = stats;
                 this.gold = gold;
                 this.image = image;
@@ -28,14 +27,11 @@ angular.module('leagueApp').factory('itemGetService', ['$http', '$q', 'API_KEY',
 
                 // combines data form http response and image links and pushes to array
                 angular.forEach(ItemListSrv, function (key, value) {
-                    var newItem = new Item(key.stats, key.gold, 'http://ddragon.leagueoflegends.com/cdn/6.16.2/img/item/' + key.id + '.png');
+                    var newItem = new Item(key.name, key.stats, key.gold, 'http://ddragon.leagueoflegends.com/cdn/6.16.2/img/item/' + key.id + '.png');
                     ItemsSrv.push(newItem);
                 });
                 deferred.resolve(ItemsSrv);
                 console.log(ItemsSrv);
-
-
-
 
             }, function errorCallback(response) {
 
