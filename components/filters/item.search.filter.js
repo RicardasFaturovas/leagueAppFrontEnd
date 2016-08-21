@@ -1,3 +1,7 @@
-/**
- * Created by Jurcix on 2016-08-11.
- */
+angular.module('leagueApp').filter('ordinal', function() {
+    return function(search){
+
+    }
+});
+
+
