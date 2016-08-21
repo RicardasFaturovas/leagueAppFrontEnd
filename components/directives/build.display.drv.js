@@ -16,6 +16,12 @@ angular.module('leagueApp').directive('buildDisplayDirective', function () {
                 itemSelectService.addItemSrv(item,$scope.index);
                 $mdDialog.hide();
             };
+            $scope.$watch(function(){
+                return itemSelectService.selectedItemsSrv[$scope.index]
+            },function(){
+                $scope.itemImage =  itemSelectService.selectedItemsSrv[$scope.index].image ;
+            });
+
             $scope.showAdvanced = function (ev) {
                 var useFullScreen = ($mdMedia('sm') || $mdMedia('xs')) && $scope.customFullscreen;
                 $mdDialog.show({
@@ -25,9 +31,6 @@ angular.module('leagueApp').directive('buildDisplayDirective', function () {
                             };
                             $scope.cancel = function () {
                                 $mdDialog.cancel();
-                            };
-                            $scope.answer = function (answer) {
-                                $mdDialog.hide(answer);
                             };
                             $scope.items = itemDataTransferService.itemDataSrv;
                             $scope.index =  $attrs.index;

@@ -9,11 +9,12 @@ angular.module('leagueApp').factory('itemGetService', ['$http', '$q', 'API_KEY',
             var ItemsSrv = [];
             var deferred = $q.defer();
 
-            function Item(name, stats, gold, image) {
+            function Item(name, stats, gold, image, tags) {
                 this.name = name;
                 this.stats = stats;
                 this.gold = gold;
                 this.image = image;
+                this.tags = tags;
             }
 
             //gets item data from riot api
@@ -27,7 +28,7 @@ angular.module('leagueApp').factory('itemGetService', ['$http', '$q', 'API_KEY',
 
                 // combines data form http response and image links and pushes to array
                 angular.forEach(ItemListSrv, function (key, value) {
-                    var newItem = new Item(key.name, key.stats, key.gold, 'http://ddragon.leagueoflegends.com/cdn/6.16.2/img/item/' + key.id + '.png');
+                    var newItem = new Item(key.name, key.stats, key.gold, 'http://ddragon.leagueoflegends.com/cdn/6.16.2/img/item/' + key.id + '.png', key.tags);
                     ItemsSrv.push(newItem);
                 });
                 deferred.resolve(ItemsSrv);
