@@ -1,4 +1,12 @@
-<div layout="column" ng-app="leagueApp" style="border: 1px solid black">
+<div class="alert" ng-show="alert">
+    <span class="closebtn" ng-click="hideAlert()">&times;</span>
+    <span>{{alertMsg}}</span>
+</div>
+
+
+<div id="signupField" layout="column" ng-app="leagueApp" style="border: 1px solid black">
+
+
     <form name="signupForm">
 
         <div style="width: 200px">
@@ -34,6 +42,6 @@
                 </div>
             </md-input-container>
         </div>
-        <md-button class="md-raised" ng-click="()">Submit</md-button>
+        <md-button class="md-raised" ng-click="submitUser()">Submit</md-button>
     </form>
 </div>

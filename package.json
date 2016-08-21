@@ -6,7 +6,8 @@
   "scripts": {
     "prestart": "npm install",
     "start": "http-server -a localhost -p 8080 -c-1 ./",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "api": "node ./node_modules/leagueapp/server.js"
   },
   "repository": {
     "type": "git",
@@ -22,6 +23,7 @@
     "angular": "^1.5.8",
     "angular-material": "^1.1.0-rc.5",
     "angular-ui-router": "^0.3.1",
+    "cors": "^2.7.1",
     "league-server": "git+https://github.com/Jurcix/leagueApp",
     "ui-router": "^1.0.0-alpha.3"
   }
