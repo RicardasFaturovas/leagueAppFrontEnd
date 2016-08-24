@@ -111,8 +111,11 @@ ul.topnav li.icon {display: none;}
 #signupField{
     display:flex;
     position: relative;
+    width: 300px;
+    height: 400px;
     align-items: center;
     justify-content: center;
+    margin-top: 10px;
 
 }
 
