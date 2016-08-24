@@ -65,6 +65,16 @@ ul.topnav li.icon {display: none;}
     background-color: #CE93D8;
     box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.26);
 }
+.md-button.md-raised.md-item {
+    width: 64px;
+    height: 84px;
+    line-height: 64px;
+    min-height: 64px;
+    vertical-align: top;
+    font-size: 12px;
+    padding: 0 0;
+    margin: 0;
+}
 
 /*------------------------------------------- alerts ----------------------------------------------------*/
 
@@ -115,5 +125,11 @@ ul.topnav li.icon {display: none;}
     justify-content: center;
 
 }
+.item-image{
+    width: 64px;
+    height: 64px;
+    vertical-align: middle;
+    border-style: solid;
+}​
 
 
