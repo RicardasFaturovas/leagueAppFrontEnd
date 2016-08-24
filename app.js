@@ -23,7 +23,13 @@ angular.module('leagueApp',[
         .state('build-create',{
             url: 'buildcreation',
             templateUrl: 'build.create/build.create.html',
-            controller:'buildCreate'
+            controller:'buildCreate',
+            resolve: {
+                items : function(itemGetService){
+                    return itemGetService.getItems();
+                }
+            }
+
         })
         .state('build-search',{
             url: '/buildsearch',
@@ -51,4 +57,4 @@ angular.module('leagueApp',[
             controller:'signup'
         })
 
-}]);
+}]).constant('API_KEY','RGAPI-EAF47474-4678-405C-A6E0-0EB899731794');

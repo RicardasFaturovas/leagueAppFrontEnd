@@ -3,8 +3,12 @@
   "version": "1.0.0",
   "description": "",
   "main": "app.js",
+  "devDependencies": {
+    "bower": "^1.7.7"
+  },
   "scripts": {
-    "prestart": "npm install",
+
+    "prestart":"npm install",
     "start": "http-server -a localhost -p 8080 -c-1 ./",
     "test": "echo \"Error: no test specified\" && exit 1",
     "api": "node ./node_modules/leagueapp/server.js"
@@ -23,8 +27,10 @@
     "angular": "^1.5.8",
     "angular-material": "^1.1.0-rc.5",
     "angular-ui-router": "^0.3.1",
-    "cors": "^2.7.1",
+    "http-server": "^0.9.0",
     "league-server": "git+https://github.com/Jurcix/leagueApp",
+    "cors": "^2.7.1",
     "ui-router": "^1.0.0-alpha.3"
+
   }
 }
