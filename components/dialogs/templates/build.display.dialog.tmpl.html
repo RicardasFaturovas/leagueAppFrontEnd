@@ -9,19 +9,17 @@
                 <label>Search: <input ng-model="item.name"></label>
 
                 <div>
-                    <md-select ng-model="search" placeholder="Search by" class="md-no-underline">
-                        <md-option value="axe">Axe</md-option>
-                        <md-option value="sword">Sword</md-option>
-                        <md-option value="wand">Wand</md-option>
-                        <md-option value="pen">Pen?</md-option>
+                    <md-select ng-model="search" class="md-no-underline">
+                        <md-option ng-value="val.tags" ng-repeat="val in filterOptions.options">{{val.name}}</md-option>
                     </md-select>
                 </div>
+
             </div>
         </md-toolbar>
         <md-dialog-content>
             <div class="md-dialog-content">
                 <ul>
-                    <li ng-repeat="item in items | filter:item">
+                    <li ng-repeat="item in items | filter:item | itemFilter: search " >
                         <img src="{{item.image}}" ng-click="selectItem(item)">
                         <md-tooltip md-delay="1200">
                             {{item.stats}}

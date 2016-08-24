@@ -26,12 +26,13 @@ angular.module('leagueApp').directive('buildDisplayDirective', function () {
             });
 
             $scope.showAdvanced = function (ev) {
-                var useFullScreen = ($mdMedia('sm') || $mdMedia('xs')) && $scope.customFullscreen;
+                //var useFullScreen = ($mdMedia('sm') || $mdMedia('xs')) && $scope.customFullscreen;
                 $mdDialog.show({
                         controller: function ($scope, $mdDialog) {
-
+                            //filter options for item search results
                             $scope.filterOptions = {
-                                stores: [
+                                options: [
+                                    {id : 0, name : 'All', tags: 'all' },
                                     {id : 1, name : 'Health', tags: 'Health' },
                                     {id : 2, name : 'Mana', tags: 'Mana' },
                                     {id : 3, name : 'Health Regen', tags: 'HealthRegen' },
@@ -46,11 +47,14 @@ angular.module('leagueApp').directive('buildDisplayDirective', function () {
                                     {id : 12, name : 'Tenacity', tags: 'Tenacity' },
                                     {id : 13, name : 'Trinket', tags: 'Trinket' },
                                     {id : 14, name : 'Attack dmg', tags: 'Damage' },
-                                    {id : 15, name : 'Trinket', tags: 'Trinket' },
-                                    {id : 16, name : 'Trinket', tags: 'Trinket' }
+                                    {id : 15, name : 'Life Steal', tags: 'LifeSteal' },
+                                    {id : 16, name : 'Attack Speed', tags: 'AttackSpeed' },
+                                    {id : 17, name : 'Ability power', tags: 'SpellDamage' },
+                                    {id : 18, name : 'Spellvamp', tags: 'SpellVamp' }
                                 ]
                             };
-
+                            //sets default filter option to 'all'
+                            $scope.search = $scope.filterOptions.options[0].tags;
 
                             $scope.hide = function () {
                                 $mdDialog.hide();
@@ -60,6 +64,7 @@ angular.module('leagueApp').directive('buildDisplayDirective', function () {
                             };
                             $scope.items = itemDataTransferService.itemDataSrv;
                             $scope.index =  $attrs.index;
+                            //adds selected item to service
                             $scope.selectItem = function(item){
                                 itemSelectService.addItemSrv(item, $scope.index);
                                 console.log(itemSelectService.selectedItemsSrv );
@@ -91,3 +96,23 @@ angular.module('leagueApp').directive('buildDisplayDirective', function () {
         }
     }
 });
+
+/*
+options: [
+    {id : 1, name : 'Health', tags: 'Health' },
+    {id : 2, name : 'Mana', tags: 'Mana' },
+    {id : 3, name : 'Health Regen', tags: 'HealthRegen' },
+    {id : 4, name : 'Mana Regen', tags: 'ManaRegen' },
+    {id : 5, name : 'Armor', tags: 'Armor' },
+    {id : 6, name : 'Magic Resist', tags: 'SpellBlock' },
+    {id : 7, name : 'Movement Speed', tags: 'NonbootsMovement' },
+    {id : 8, name : 'GoldPer', tags: 'GoldPer' },
+    {id : 9, name : 'Vision', tags: 'Vision' },
+    {id : 10, name : 'Active', tags: 'Active' },
+    {id : 11, name : 'Boots', tags: 'Boots' },
+    {id : 12, name : 'Tenacity', tags: 'Tenacity' },
+    {id : 13, name : 'Trinket', tags: 'Trinket' },
+    {id : 14, name : 'Attack dmg', tags: 'Damage' },
+    {id : 15, name : 'Trinket', tags: 'Trinket' },
+    {id : 16, name : 'Trinket', tags: 'Trinket' }
+]*/
