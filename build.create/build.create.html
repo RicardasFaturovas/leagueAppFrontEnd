@@ -6,6 +6,12 @@
 </head>
 <body>
 <h1 align="center">Build Creation</h1>
+<div>
+    <md-input-container>
+        <label>Build Name</label>
+        <input type="text" ng-model="buildName" required md-maxlength="20">
+    </md-input-container>
+</div>
 
 <div id="build-creation-form" align="center">
     <build-display-directive index="0"></build-display-directive>
@@ -15,8 +21,8 @@
     <build-display-directive index="4"></build-display-directive>
     <build-display-directive index="5"></build-display-directive>
 </div>
-<!--<md-button class="md-primary md-raised" ng-click="saveBuild()">
+<md-button class="md-primary md-raised" ng-click="saveBuild(buildName)">
     <span>Save Build</span>
-</md-button>-->
+</md-button>
 </body>
 </html>
