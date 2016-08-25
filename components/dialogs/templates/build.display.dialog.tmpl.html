@@ -3,13 +3,11 @@
         <md-toolbar>
             <div class="md-toolbar-tools">
                 <div>Select your item</div>
-                <md-button class="md-primary md-raised md-item" ng-click="cancel()">
-                    <span>Cancel</span>
-                </md-button>
-                <label>Search: <input ng-model="item.name"></label>
+
+                <label>Search: <input ng-model="item.name" placeholder="Search by name"></label>
 
                 <div>
-                    <md-select ng-model="search" class="md-no-underline">
+                    <md-select ng-model="search"  class="md-no-underline">
                         <md-option ng-value="val.tags" ng-repeat="val in filterOptions.options">{{val.name}}</md-option>
                     </md-select>
                 </div>
@@ -21,15 +19,19 @@
                 <ul>
                     <li ng-repeat="item in items | filter:item | itemFilter: search " >
                         <img src="{{item.image}}" ng-click="selectItem(item)">
-                        <md-tooltip md-delay="1200">
-                            {{item.stats}}
+                        <md-tooltip class="md-content" md-delay="800">
+                            <ul >
+                                <li ng-repeat="(key,value) in item.stats">{{key}}:{{value}}</li>
+                            </ul>
                         </md-tooltip>
-
                     </li>
                 </ul>
             </div>
         </md-dialog-content>
         <md-dialog-actions layout="row">
+            <md-button class="md-primary md-raised md-item" ng-click="cancel()">
+                <span>Cancel</span>
+            </md-button>
             <span flex></span>
         </md-dialog-actions>
     </form>

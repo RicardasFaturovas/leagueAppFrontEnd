@@ -8,7 +8,7 @@ angular.module('leagueApp').factory('itemSelectService',['$http','$cookies', fun
     var saveBuildSrv = function(buildName){
         $http({
             method: 'POST',
-            url: 'localhost:9001/api/createbuild?token='+token,
+            url: 'http://localhost:9001/api/createbuild/?token=' + token,
             data: {
                 name: buildName,
                 username: username,
@@ -18,6 +18,7 @@ angular.module('leagueApp').factory('itemSelectService',['$http','$cookies', fun
         }).then(function successCallback(response) {
             console.log('success');
         }, function errorCallback(response) {
+            console.log(response);
             // called asynchronously if an error occurs
             // or server returns response with an error status.
         });
