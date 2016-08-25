@@ -10,7 +10,8 @@ angular.module('leagueApp',[
     'leagueApp.profileView',
     'leagueApp.signup',
     'ngMaterial',
-    'ngMessages'
+    'ngMessages',
+    'ngCookies'
     ])
 .config(['$urlRouterProvider', '$stateProvider',function($urlRouterProvider, $stateProvider){
     $stateProvider

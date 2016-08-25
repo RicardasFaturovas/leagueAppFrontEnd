@@ -1,13 +1,20 @@
-angular.module('leagueApp').factory('itemSelectService',['$http', function ($http) {
+angular.module('leagueApp').factory('itemSelectService',['$http','$cookies', function ($http,$cookies) {
     var selectedItemsSrv = [null,null,null,null,null,null];
     var addItemSrv = function(item, index){
       selectedItemsSrv.splice(index, 1, item);
     };
-    var saveBuildSrv = function(){
+    var token = $cookies.get('token');
+    var username = $cookies.get('username');
+    var saveBuildSrv = function(buildName){
         $http({
             method: 'POST',
-            url: 'localhost:9001/api/createbuild',
-            data: selectedItemsSrv
+            url: 'localhost:9001/api/createbuild?token='+token,
+            data: {
+                name: buildName,
+                username: username,
+                items: selectedItemsSrv
+
+            }
         }).then(function successCallback(response) {
             console.log('success');
         }, function errorCallback(response) {
